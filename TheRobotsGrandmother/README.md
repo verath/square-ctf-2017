@@ -13,7 +13,7 @@ Robots have grandparents too!
 > https://cdn.squarectf.com/challenges/the-robot's-grandmother.pcap
 > 
 
-Opening the provided .pcap file in wireshark, we a couple of packets using the SMTP protocol.
+Opening the provided .pcap file in wireshark, we find a couple of packets using the SMTP protocol.
 
 ![wireshark window](wireshark.png)
 
