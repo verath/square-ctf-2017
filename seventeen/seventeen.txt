@@ -1,0 +1,38 @@
+= Overview of seventeen =
+
+** CONFIDENTIAL: Please do not talk about seventeen with non-Evil Robot Corp. employees **
+
+Seventeen is a very simple programming language. It gets its name from the fact
+that there are only 17 instructions.
+
+Seventeen is used for internal cryptography applications. The seventeen core runtime
+has been proven to be secure (see seventeen.coq). In the future, we plan to expand
+this language and build commercial products, so please keep all this confidential.
+
+Here are some of the core concepts:
+
+* Each program starts execution with the first instruction in the file, and keeps
+  processing instructions sequentially unless an IFZ, IFG, CALL, JMP or EXIT
+  instruction is encountered.
+
+* There are three storage systems:
+  - a stack (where data can be pushed)
+  - a vector (where data can be read or written using an offset)
+  - variables
+
+  The state of all these storage systems is undefined when a program starts.
+
+* Most operations work with the stack. E.g. "1 2 ADD" will:
+  - push 1 on the stack
+  - push 2 on the stack
+  - Replace these two numbers with their sum
+
+  The resulting stack will contain 3.
+
+* Variables and labels are in the "a-z_" range ('a' to 'z' with '_').
+
+Make sure to read the formal specification (see seventeen.spec)
+
+= Sample code =
+
+* see primes.17
