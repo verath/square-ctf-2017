@@ -6,6 +6,8 @@
 > It's 2am, your computer starts beeping and wakes you up. Somebody took the bait! You now finally have a reverse shell inside Evil Robot Corp’s corporate unit. All you want to do next is steal their root certificate's private key.
 > You realize you don't have much time, you are probably going to trip an IDS at some point.
 > You are still only half awake, but you can feel your heart pounding. You quickly launch a crawler against the intranet. You then spawn a second shell. You see their login banner and giggle.
+> 
+> ```
 > ############################################################
 > #                                                          #
 > # This computer system is the property of Evil Robot Corp. #
@@ -16,9 +18,11 @@
 > # extent of the law.                                       #
 > #                                                          #
 > ############################################################
-> 
+> ``` 
+>
 > You start grabbing some files.
 > You have waited for this day a long time, you want to impress the CIA (Cats and Interspecies Allies, although the androids have enough programmed snarkiness to call it Cats and Inferior Animals). You are still only half awake, dreaming about getting that @cia.de email address...
+> ```
 > 5.35 pm, PST, Sunnyvale, CA, USA
 > AMS1 (android monitoring system 1): "ALERT! ALERT! STATISTICALLY SIGNIFICANT DEVIATION DETECTED!"
 > ER1 (evil robot 1): "Traffic spike on Intranet. AMS1, identify source IP."
@@ -31,6 +35,7 @@
 > AMS1: “TRAFFIC FLOW TO: GERMANY.”
 > ER1: “AMS1, advise. Should we enable network segregation? We could monitor traffic and redirect it to honey pots.”
 > AMS1: “NEGATIVE. OUR WORK HOURS HAVE ENDED. SHUTTING DOWN ALL CONNECTIONS.”
+> ```
 > 
 > 3.50 am, CET, Heidelberg, Germany
 > You weren't able to stay connected for very long. You weren't expecting to go unnoticed, but you were really hoping to keep a few shells around for a few hours at the very least. You feel some regret for not doing your recon right, you should have known what would go noticed and what wouldn't before starting all this.

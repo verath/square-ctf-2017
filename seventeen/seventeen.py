@@ -230,7 +230,7 @@ class Seventeen():
             self._stack.append(int(instruction, 10))
 
 
-    def _do_step(self):
+    def _step(self):
         instruction = self._source_lines[self._pc]
         if self.debug:
             print("Stack:", self._stack)
@@ -252,10 +252,9 @@ class Seventeen():
 
         self._pc = 0
         try:
-            while self._do_step():
-                pass
-                #if self.debug:
-                #    input()
+            while self._step():
+                if self.debug:
+                    input()
         finally:
             if self.debug:
                 print("Final State:")
