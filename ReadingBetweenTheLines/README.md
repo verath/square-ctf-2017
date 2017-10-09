@@ -40,8 +40,8 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 ```
 
 The new file that binwalk discovers for us, 2017-08-12 15.05.06.jpg, 
-contains the flag.
+contains the flag:
 
-![2017-08-12 15.05.06.jpg](2017-08-12 15.05.06.jpg)
+![2017-08-12 15.05.06.jpg](2017-08-12%2015.05.06.jpg)
 
 flag: `flag-a14ad96e767617586f7158353c25f7b5`
