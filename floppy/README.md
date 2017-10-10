@@ -18,7 +18,7 @@ Challenge: 51
 Code?
 ABCD
 Nope
-``
+```
 3. Then I took the route of static analysis and opened the floppy.img in hopper. Here is a relevant extract, which lead to solving the challenge:
 ```
 00001403         mov        dword [ebp+var_48], edx
